@@ -1,7 +1,4 @@
-package com.dodevjutsu.kata.marsrover.test_helpers;
-
-import com.dodevjutsu.kata.marsrover.Coordinates;
-import com.dodevjutsu.kata.marsrover.Planet;
+package com.dodevjutsu.kata.marsrover;
 
 public class WrappingPlanet implements Planet {
 

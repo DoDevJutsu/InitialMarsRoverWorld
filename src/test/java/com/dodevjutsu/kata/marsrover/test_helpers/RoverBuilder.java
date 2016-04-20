@@ -3,6 +3,7 @@ package com.dodevjutsu.kata.marsrover.test_helpers;
 import com.dodevjutsu.kata.marsrover.Planet;
 import com.dodevjutsu.kata.marsrover.Rover;
 import com.dodevjutsu.kata.marsrover.SimplePlanet;
+import com.dodevjutsu.kata.marsrover.WrappingPlanet;
 
 public class RoverBuilder {
     private int y;
