@@ -45,13 +45,20 @@ public class RoverMovingForward {
     }
 
     @Test
-    public void when_crossing_the_edge() {
-        int min_y = 0;
-        int max_y = 20;
-        Rover rover = aRover().at(0, max_y).facing("N").build();
+    public void when_crossing_the_edge_on_a_wrapping_planet() {
+        Rover rover = aRover().onAWrappingPlanet(20, 20).at(0, 20).facing("N").build();
 
         rover.receive("f");
 
-        assertThat(rover, is(locatedAt(0, min_y, "N")));
+        assertThat(rover, is(locatedAt(0, 1, "N")));
+    }
+
+    @Test
+    public void there_are_no_edges_on_a_simple_planet() {
+        Rover rover = aRover().at(0, 20).facing("N").build();
+
+        rover.receive("f");
+
+        assertThat(rover, is(locatedAt(0, 21, "N")));
     }
 }

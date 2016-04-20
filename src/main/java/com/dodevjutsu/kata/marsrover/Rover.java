@@ -3,8 +3,8 @@ package com.dodevjutsu.kata.marsrover;
 public class Rover {
     private Vector vector;
 
-    public Rover(int x, int y, String directionCode) {
-        this.vector = new Vector(new Coordinates(x, y), Direction.pointingTo(directionCode));
+    public Rover(int x, int y, String directionCode, Planet planet) {
+        this.vector = new Vector(new Coordinates(x, y, planet), Direction.pointingTo(directionCode));
     }
 
     public void receive(String commandCodes) {
