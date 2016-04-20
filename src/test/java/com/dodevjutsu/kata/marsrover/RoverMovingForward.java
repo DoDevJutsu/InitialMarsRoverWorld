@@ -44,4 +44,14 @@ public class RoverMovingForward {
         assertThat(rover, is(locatedAt(8, 0, "W")));
     }
 
+    @Test
+    public void when_crossing_the_edge() {
+        int min_y = 0;
+        int max_y = 20;
+        Rover rover = aRover().at(0, max_y).facing("N").build();
+
+        rover.receive("f");
+
+        assertThat(rover, is(locatedAt(0, min_y, "N")));
+    }
 }

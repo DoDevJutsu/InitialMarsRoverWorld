@@ -4,6 +4,9 @@ public class Coordinates {
     private final int x;
     private final int y;
 
+    private static final int maxX = 20;
+    private static final int maxY = 20;
+
     public Coordinates(int x, int y) {
         this.x = x;
         this.y = y;
@@ -14,7 +17,14 @@ public class Coordinates {
     }
 
     public Coordinates incrementY(int displacement) {
-        return new Coordinates(x, y + displacement);
+        int newY;
+
+        if (y == maxY)
+            newY = 0;
+        else
+            newY = y + displacement;
+
+        return new Coordinates(x, newY);
     }
 
     @Override
