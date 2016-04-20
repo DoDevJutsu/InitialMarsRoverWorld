@@ -4,17 +4,18 @@ import org.junit.Test;
 
 import static com.dodevjutsu.kata.marsrover.test_helpers.RoverBuilder.aRover;
 import static com.dodevjutsu.kata.marsrover.test_helpers.RoverTestsHelpers.locatedAt;
+import static com.dodevjutsu.kata.marsrover.test_helpers.RoverTestsHelpers.stillLocatedAt;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class RoverReceivingSequenceOfCommands {
     @Test
-    public void not_moving_when_receiving_an_empty_commands_sequence() {
+    public void receiving_an_empty_sequence() {
         Rover rover = aRover().at(1, 3).facing("N").build();
 
         rover.receive("");
 
-        assertThat(rover, is(locatedAt(1, 3, "N")));
+        assertThat(rover, is(stillLocatedAt(1, 3, "N")));
     }
 
     @Test
@@ -32,6 +33,6 @@ public class RoverReceivingSequenceOfCommands {
 
         rover.receive("*");
 
-        assertThat(rover, is(locatedAt(0, 4, "S")));
+        assertThat(rover, is(stillLocatedAt(0, 4, "S")));
     }
 }
